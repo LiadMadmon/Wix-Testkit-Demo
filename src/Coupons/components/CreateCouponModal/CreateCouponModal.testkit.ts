@@ -20,7 +20,7 @@ export class CreateCouponModalTestkit {
     });
   }
   
-  private getSaveButton = async (): Promise<HTMLElement> => {
+  private findSaveButton = async (): Promise<HTMLElement> => {
     return screen.findByTestId('save-coupon-primary-button');
   }
 
@@ -31,6 +31,6 @@ export class CreateCouponModalTestkit {
   }
 
   public clickSaveButton = async (): Promise<void> => {
-    (await this.getSaveButton()).click();
+    (await this.findSaveButton()).click();
   }
 }

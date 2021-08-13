@@ -8,13 +8,19 @@ describe('Create New Coupon Modal', () => {
   createCouponModalTestkit.beforeAndAfter();
   
   it('should call save coupon when save button clicked', async () => {    
-    const onSuccessMock = jest.fn();
+    const handleCouponGeneratedSuccessMock = jest.fn();
     const { coupon } = createCouponModalTestkit.withSaveSuccess();
     
-    render(<CreateCouponModal onSuccess={onSuccessMock} isModalOpened={true} />);
+    render(
+      <CreateCouponModal 
+        handleClose={() => {}} 
+        handleCouponGeneratedSuccess={handleCouponGeneratedSuccessMock} 
+        isModalOpen={true} 
+      />
+    );
   
     await createCouponModalTestkit.clickSaveButton();
     
-    expect(onSuccessMock).toHaveBeenCalledWith({ coupon });
+    expect(handleCouponGeneratedSuccessMock).toHaveBeenCalledWith({ coupon });
   });
 });

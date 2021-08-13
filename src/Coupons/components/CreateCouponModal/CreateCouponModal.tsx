@@ -11,25 +11,25 @@ import { generateACoupon } from "../../utils";
 import { useEffect } from "react";
 
 type CreateCouponModalProps = {
-  onSuccess({ coupon }: { coupon: string }): void;
-  isModalOpened: boolean;
+  handleCouponGeneratedSuccess({ coupon }: { coupon: string }): void;
+  handleClose(): void;
+  isModalOpen: boolean;
 };
 
 export const CreateCouponModal = ({
-  onSuccess,
-  isModalOpened
+  handleCouponGeneratedSuccess,
+  handleClose,
+  isModalOpen,
 }: CreateCouponModalProps) => {
-  const handleSaveClicked = () => {
+  const handleSaveClicked = (): void => {
     const { coupon } = generateACoupon();
-    onSuccess({ coupon });
+    handleCouponGeneratedSuccess({ coupon });
   };
-
-  const handleCloseModal = () => {};
-
+  
   return (
     <Dialog
-      open={isModalOpened}
-      onClose={handleCloseModal}
+      open={isModalOpen}
+      onClose={handleClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
@@ -40,7 +40,7 @@ export const CreateCouponModal = ({
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleCloseModal} color="primary">
+        <Button onClick={handleClose} color="primary">
           disagree
         </Button>
         <Button 
