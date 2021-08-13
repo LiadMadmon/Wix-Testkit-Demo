@@ -5,13 +5,13 @@ import Chance from 'chance';
 const random = new Chance();
 
 export class CreateCouponModalTestkit {
-  private spies = {
+  private _spies = {
     generateACouponSpy: jest.spyOn(utilsModule, 'generateACoupon'),
   }
 
   
   private resetSpies = () => {
-    this.spies.generateACouponSpy.mockClear();
+    this._spies.generateACouponSpy.mockClear();
   }
   
   public beforeAndAfter = () => {
@@ -26,7 +26,7 @@ export class CreateCouponModalTestkit {
 
   public withSaveSuccess = (): { coupon: string } => {
     const coupon: string = random.guid();
-    this.spies.generateACouponSpy.mockReturnValue({ coupon });
+    this._spies.generateACouponSpy.mockReturnValue({ coupon });
     return { coupon };
   }
 

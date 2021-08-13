@@ -1,6 +1,5 @@
-import { CreateNewCouponPage } from "./Bookings/components/CreateNewCouponPage/CreateNewCouponPage";
+import { CreateNewCouponPage } from "./Bookings/components/CreateCouponPage/CreateCouponPage";
 import "./styles.css";
-// import { CreateCouponPage } from "./Bookings/components/CreateCouponPage/CreateCouponPage";
 
 export default function App() {
   return <CreateNewCouponPage />;

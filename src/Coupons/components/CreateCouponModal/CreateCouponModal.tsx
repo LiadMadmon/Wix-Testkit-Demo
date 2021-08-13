@@ -40,7 +40,7 @@ export const CreateCouponModal = ({
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">
-          disagree
+          Cancel
         </Button>
         <Button 
           data-testid="save-coupon-primary-button" 
