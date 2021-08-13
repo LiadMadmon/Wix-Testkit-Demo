@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   Button, 
   Dialog, 
@@ -8,10 +8,9 @@ import {
   DialogTitle 
 } from "@material-ui/core";
 import { generateACoupon } from "../../utils";
-import { useEffect } from "react";
 
 type CreateCouponModalProps = {
-  handleCouponGeneratedSuccess({ coupon }: { coupon: string }): void;
+  handleCouponGeneratedSuccess: (coupon: string) => void;
   handleClose(): void;
   isModalOpen: boolean;
 };
@@ -23,7 +22,7 @@ export const CreateCouponModal = ({
 }: CreateCouponModalProps) => {
   const handleSaveClicked = (): void => {
     const { coupon } = generateACoupon();
-    handleCouponGeneratedSuccess({ coupon });
+    handleCouponGeneratedSuccess(coupon);
   };
   
   return (

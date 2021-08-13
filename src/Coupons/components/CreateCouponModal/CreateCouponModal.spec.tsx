@@ -21,6 +21,6 @@ describe('Create New Coupon Modal', () => {
   
     await createCouponModalTestkit.clickSaveButton();
     
-    expect(handleCouponGeneratedSuccessMock).toHaveBeenCalledWith({ coupon });
+    expect(handleCouponGeneratedSuccessMock).toHaveBeenCalledWith(coupon);
   });
 });

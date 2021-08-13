@@ -6,7 +6,7 @@ import { CreateCouponModal } from '../../../Coupons/components/CreateCouponModal
 export const CreateNewCouponPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleCouponGeneratedSuccess = ({ coupon }: { coupon: string }) => {
+  const handleCouponGeneratedSuccess = (coupon: string) => {
     displayCoupon({ coupon });
     setIsModalOpen(false);
   }
