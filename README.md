@@ -16,14 +16,10 @@ Create a new testkit instance for a relevant spec suite, with the following API:
 
 | Method   | Return Type | Trigger Instructions |  Description |
 |----------|:------|:---:|---------------|
-| beforeAndAfter |  void | Trigger once between the describe and first it| Setup function for mocks spies and environmental preparations |
+| beforeAndAfter |  void | (Mandatory) Trigger once between the describe and first it| Setup function for mocks spies and environmental preparations |
 | withSaveSuccess |  { coupon: string } | In each test before you click the save button | Mocks a successful coupon generation |
-| clickSaveButton |  Promise<void> | Whenever you want to click on Save button | Performs a save operation. |
+| clickSaveButton |  Promise(void) | Whenever you want to click on Save button | Performs a save operation. |
 
-`beforeandafter:`
-Has to be triggered once, before the first test. Encapsulates a bunch of environmental preparations, , see the usage exmaple below.
-`withSaveSuccess`
-Must be triggered before clicking the Save button in order to verify sucecss coupon generation.
 ## Example
 ```typescript
 import { CreateCouponModalTestkit } from 'coupons';
