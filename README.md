@@ -1,4 +1,4 @@
-# Coupon Coupon Modal Testkit
+# Coupon Modal Testkit
 
 ## Getting Started
 ```
@@ -13,8 +13,8 @@ yarn start
 
 ## API Notes
 Create a new testkit instance for a relevant spec suite,
-The single testkit can serve the complete suite. 
-Mocks, spies, test setup is encapsulated and should be trigerred via the `beforeandafter` method, it's a mandatory phase, take a look at the exmaple below.
+a single testkit can serve the complete suite.
+Trigger the `beforeandafter` method which encapsulates a bunch of environmental preparations, it's mandatory, trigger it once before the first test, see the exmaple below.
 
 ## Example
 ```typescript
