@@ -1,6 +1,6 @@
 import { CreateCouponModalTestkit } from '../../../Coupons/components/CreateCouponModal/CreateCouponModal.testkit';
 import { render } from '@testing-library/react';
-import { CreateNewCouponPage } from './CreateCouponPage';
+import { CreateCouponPage } from './CreateCouponPage';
 import { CreateCouponPageTestkit } from './CreateCouponPage.testkit';
 
 describe('CreateCouponPage', () => {
@@ -12,7 +12,7 @@ describe('CreateCouponPage', () => {
   it('should call displayCoupon when coupon was generated successfully', async () => {
     const { coupon } = createCouponModalTestkit.withSaveSuccess();
 
-    render(<CreateNewCouponPage />);
+    render(<CreateCouponPage />);
 
     await createCouponPageTestkit.clickOpenModalButton();
     await createCouponModalTestkit.clickSaveButton();

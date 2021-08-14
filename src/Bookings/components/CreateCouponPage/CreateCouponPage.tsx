@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { displayCoupon } from '../../utils';
 import { CreateCouponModal } from '../../../Coupons/components/CreateCouponModal/CreateCouponModal';
 
-export const CreateNewCouponPage = () => {
+export const CreateCouponPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleCouponGeneratedSuccess = (coupon: string) => {
