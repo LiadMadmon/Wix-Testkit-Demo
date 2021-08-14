@@ -31,7 +31,7 @@ describe('CreateCouponPage', () => {
   const createCouponModalTestkit = new CreateCouponModalTestkit();
   createCouponModalTestkit.beforeAndAfter();
 
-  it('should call displayCoupon when coupon was generated successfully', async () => {
+  it('An exmaple test for using CreateCouponModalTestkit', async () => {
     const { coupon } = createCouponModalTestkit.withSaveSuccess();
 
     render(<MyComponent />);
