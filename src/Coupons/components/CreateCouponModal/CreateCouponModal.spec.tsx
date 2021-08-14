@@ -3,11 +3,11 @@ import { render } from '@testing-library/react';
 import { CreateCouponModalTestkit } from './CreateCouponModal.testkit';
 import { CreateCouponModal } from './CreateCouponModal';
 
-describe('Create New Coupon Modal', () => {
+describe('CreateCouponModal', () => {
   const createCouponModalTestkit = new CreateCouponModalTestkit();
   createCouponModalTestkit.beforeAndAfter();
   
-  it('should call save coupon when save button clicked', async () => {    
+  it('should call coupon success callback when coupon generated successfully', async () => {    
     const handleCouponGeneratedSuccessMock = jest.fn();
     const { coupon } = createCouponModalTestkit.withSaveSuccess();
     
